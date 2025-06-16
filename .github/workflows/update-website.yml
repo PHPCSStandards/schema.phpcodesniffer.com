@@ -79,7 +79,7 @@ jobs:
 
       # Commit all changed files back to the repository
       - name: Commit updated files
-        uses: stefanzweifel/git-auto-commit-action@v5
+        uses: stefanzweifel/git-auto-commit-action@v6
         with:
           commit_message: "Update XSD files"
           add_options: '-A'
