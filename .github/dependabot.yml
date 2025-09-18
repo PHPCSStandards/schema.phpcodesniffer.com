@@ -15,6 +15,14 @@ updates:
       prefix: "GH Actions:"
     labels:
       - "Type: chores/QA"
+    cooldown:
+      semver-major-days: 10
+    groups:
+      action-runners:
+        applies-to: version-updates
+        update-types:
+          - "minor"
+          - "patch"
 
   - package-ecosystem: "composer"
     directory: "/"
