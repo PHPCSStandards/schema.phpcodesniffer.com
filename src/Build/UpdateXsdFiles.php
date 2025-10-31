@@ -142,7 +142,6 @@ final class UpdateXsdFiles
         $releasesJson = \curl_exec($curl);
 
         if (\is_string($releasesJson) === false) {
-            \curl_close($curl);
             throw new RuntimeException('GitHub API request to retrieve the releases failed');
         }
 
@@ -150,11 +149,8 @@ final class UpdateXsdFiles
         $latestReleaseJson = \curl_exec($curl);
 
         if (\is_string($latestReleaseJson) === false) {
-            \curl_close($curl);
             throw new RuntimeException('GitHub API request to retrieve the latest release failed');
         }
-
-        \curl_close($curl);
 
         $latestRelease = \json_decode($latestReleaseJson, flags: \JSON_THROW_ON_ERROR | \JSON_OBJECT_AS_ARRAY);
         $latestRelease = $latestRelease['tag_name'];
@@ -230,7 +226,7 @@ final class UpdateXsdFiles
     {
         $url      = \sprintf(self::XSD_URL, $tagName);
         $contents = \file_get_contents($url);
-        if (!$contents) {
+        if (\is_string($contents) === false) {
             throw new RuntimeException(\sprintf('Failed to read XSD file: %s', $url));
         }
 
