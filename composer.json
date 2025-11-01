@@ -21,8 +21,8 @@
     },
     "require-dev" : {
         "php" : "~8.4",
-        "phpcsstandards/phpcsdevcs": "^1.1.6",
-        "phpstan/phpstan": "^2.0.0"
+        "phpcsstandards/phpcsdevcs": "^1.2.0",
+        "phpstan/phpstan": "^2.1.15"
     },
     "config": {
         "allow-plugins": {
