@@ -196,7 +196,7 @@ final class UpdateXsdFiles
             }
 
             // New minor. Remember which one.
-            if (\preg_match('`^([0-9]+\.[0-9]+\.)`', $tagName, $matches) === false) {
+            if (\preg_match('`^([0-9]+\.[0-9]+\.)`', $tagName, $matches) !== 1) {
                 throw new RuntimeException('Couldn\'t retrieve minor version number from tag name');
             }
             $lastSeenMinor = $matches[1];
