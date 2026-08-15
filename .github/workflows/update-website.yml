@@ -28,12 +28,12 @@ concurrency:
 
 jobs:
   update:
-    name: "Update XSD files"
-
     # Don't run on forks.
     if: github.repository == 'PHPCSStandards/schema.phpcodesniffer.com'
 
+    name: "Update XSD files"
     runs-on: ubuntu-latest
+
     steps:
       # By default use the `stable` branch.
       # For testing changes to the workflow or the scripts, use the PR branch
@@ -102,15 +102,16 @@ jobs:
 
   deploy:
     needs: update
+
     # Don't run on forks.
     if: github.repository == 'PHPCSStandards/schema.phpcodesniffer.com' && github.event_name != 'pull_request' && needs.update.result == 'success'
-
-    name: "Deploy the website"
-    runs-on: ubuntu-latest
 
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
+
+    name: "Deploy the website"
+    runs-on: ubuntu-latest
 
     steps:
       - name: Deploy to GitHub Pages
