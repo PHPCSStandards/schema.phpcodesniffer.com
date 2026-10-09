@@ -172,7 +172,7 @@ final class UpdateXsdFiles
 
     /**
      * Loop through the list of PHP_CodeSniffer releases and retrieve the XSD files for the last
-     * patch release in each minor an save it to a directory per minor.
+     * patch release in each minor and save it to a directory per minor.
      *
      * Also save the XSD file for the latest stable release to the "site" root directory.
      *
