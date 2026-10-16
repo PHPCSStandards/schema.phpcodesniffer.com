@@ -1,38 +1,38 @@
 {
-    "name" : "phpcsstandards/schema.phpcodesniffer.com",
-    "description" : "Schema website for PHP_CodeSniffer",
-    "homepage": "https://schema.phpcodesniffer.com/",
+    "name": "phpcsstandards/schema.phpcodesniffer.com",
+    "description": "Schema website for PHP_CodeSniffer",
     "license": "BSD-3-Clause",
     "type": "project",
-    "authors" : [
+    "authors": [
         {
-            "name" : "Juliette Reinders Folmer",
-            "role" : "lead",
-            "homepage" : "https://github.com/jrfnl"
+            "name": "Juliette Reinders Folmer",
+            "homepage": "https://github.com/jrfnl",
+            "role": "lead"
         },
         {
-            "name" : "Contributors",
-            "homepage" : "https://github.com/PHPCSStandards/schema.phpcodesniffer.com/graphs/contributors"
+            "name": "Contributors",
+            "homepage": "https://github.com/PHPCSStandards/schema.phpcodesniffer.com/graphs/contributors"
         }
     ],
-    "support" : {
-        "source" : "https://github.com/PHPCSStandards/schema.phpcodesniffer.com",
+    "homepage": "https://schema.phpcodesniffer.com/",
+    "support": {
+        "source": "https://github.com/PHPCSStandards/schema.phpcodesniffer.com",
         "security": "https://github.com/PHPCSStandards/schema.phpcodesniffer.com/security/policy"
     },
-    "require-dev" : {
-        "php" : "~8.4",
+    "require-dev": {
+        "php": "^8.4",
         "phpcsstandards/phpcsdevcs": "^1.3.0",
         "phpstan/phpstan": "^2.3.1"
     },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "config": {
         "allow-plugins": {
             "dealerdirect/phpcodesniffer-composer-installer": true
         },
         "lock": false
     },
-    "minimum-stability": "dev",
-    "prefer-stable": true,
-    "scripts" : {
+    "scripts": {
         "checkcs": [
             "@php ./vendor/squizlabs/php_codesniffer/bin/phpcs"
         ],
