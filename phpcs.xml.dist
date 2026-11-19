@@ -33,6 +33,12 @@
         <exclude name="PSR12.Files.FileHeader.SpacingAfterBlock"/>
 
         <exclude name="PEAR.Commenting.FileComment.MissingPackageTag"/>
+
+        <!-- Temporary exclusion until the trim()/ltrim()/rtrim() calls have been reviewed for the PHP 8.6
+             change to the default value of the $characters parameter.
+             Ref: https://github.com/PHPCSStandards/schema.phpcodesniffer.com/issues/52
+        -->
+        <exclude name="PHPCompatibility.ParameterValues.NewTrimCharactersDefault"/>
     </rule>
 
     <!-- Set minimum PHP version supported to PHP 8.4. -->
