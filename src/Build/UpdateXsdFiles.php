@@ -256,7 +256,7 @@ final class UpdateXsdFiles
         }
 
         // Make sure the file always ends on a new line.
-        $contents = \rtrim($contents) . "\n";
+        $contents = \rtrim($contents, " \f\n\r\t\v\x00") . "\n";
         if (\file_put_contents($target, $contents) === false) {
             throw new RuntimeException(\sprintf('Failed to write to target location: %s', $target));
         }
